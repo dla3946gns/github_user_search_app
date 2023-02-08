@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <include
+            android:id="@+id/view_header_search"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            layout="@layout/header_type_search"/>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_below="@id/view_header_search">
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rv_github_users"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
+
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:progressBarStyle"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent" />
+
+            <LinearLayout
+                android:id="@+id/ll_restart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_data_load_error"
+                    android:gravity="center"
+                    android:textSize="@dimen/size_15"
+                    android:textColor="@color/black"
+                    android:paddingBottom="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_100"/>
+
+                <TextView
+                    android:id="@+id/tv_restart"
+                    android:layout_width="@dimen/size_100"
+                    android:layout_height="@dimen/size_50"
+                    android:text="@string/str_re_start"
+                    android:gravity="center"
+                    android:textSize="@dimen/size_15"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_round"/>
+
+            </LinearLayout>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <TextView
+            android:id="@+id/tv_search_result_none"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:text="@string/str_search_result_none"
+            android:gravity="center"
+            android:textSize="@dimen/size_15"
+            android:textColor="@color/black"
+            android:layout_below="@id/view_header_search"
+            android:visibility="gone"
+            tools:visibility="gone"/>
+
+    </RelativeLayout>
+
+</layout>

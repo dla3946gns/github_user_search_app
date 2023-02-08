@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <import type="com.example.user_github_list.data.RepoData"/>
+        <variable
+            name="repo"
+            type="RepoData" />
+    </data>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="@dimen/size_10"
+        android:layout_marginStart="@dimen/size_10"
+        android:layout_marginEnd="@dimen/size_10"
+        android:background="@drawable/bg_search_round">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
+
+            <ImageView
+                android:id="@+id/movie_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:src="@color/black" />
+
+            <com.google.android.material.textview.MaterialTextView
+                android:id="@+id/movie_title"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textSize="@dimen/size_18"
+                android:textStyle="bold"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:paddingStart="@dimen/size_10"
+                android:paddingEnd="@dimen/size_10"
+                tools:text="Hello!" />
+
+        </LinearLayout>
+
+    </RelativeLayout>
+</layout>
