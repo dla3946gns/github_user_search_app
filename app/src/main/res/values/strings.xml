@@ -6,4 +6,12 @@
     <string name="str_data_load_fail">데이터 로드 실패</string>
     <string name="str_write_search_word">검색어를 입력해주세요.</string>
     <string name="str_back_press">\'뒤로\'버튼을 한번 더 누르시면 종료됩니다.</string>
+    <string name="str_repository_result_none">Repository가 없습니다.</string>
+
+    <string name="fmt_user_repository_desc">%s님의 Repository입니다.</string>
+    <string name="fmt_username">이름 : %s</string>
+    <string name="fmt_user_github_name">깃허브 : %s</string>
+    <string name="fmt_repo_count">Repository : %s개</string>
+    <string name="fmt_follower_count">팔로워 수 : %s명</string>
+    <string name="fmt_following_count">팔로잉 수 : %s명</string>
 </resources>

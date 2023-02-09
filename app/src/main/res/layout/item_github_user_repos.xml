@@ -14,8 +14,6 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="@dimen/size_10"
-        android:layout_marginStart="@dimen/size_10"
-        android:layout_marginEnd="@dimen/size_10"
         android:background="@drawable/bg_search_round">
 
         <LinearLayout
@@ -23,14 +21,8 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <ImageView
-                android:id="@+id/movie_image"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:src="@color/black" />
-
             <com.google.android.material.textview.MaterialTextView
-                android:id="@+id/movie_title"
+                android:id="@+id/tv_repo_name"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
@@ -38,9 +30,28 @@
                 android:textStyle="bold"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:paddingStart="@dimen/size_10"
-                android:paddingEnd="@dimen/size_10"
+                android:paddingBottom="@dimen/size_10"
+                android:text="@{repo.name}"
                 tools:text="Hello!" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/size_15"
+                android:paddingBottom="@dimen/size_10"
+                android:text="@{repo.fullName}"
+                tools:text="repository full name"/>
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                style="@style/TextAppearance.AppCompat.Body1"
+                android:textSize="@dimen/size_12"
+                android:ellipsize="end"
+                android:maxLines="2"
+                android:text="@{repo.description}"
+                tools:text="repository description"/>
 
         </LinearLayout>
 

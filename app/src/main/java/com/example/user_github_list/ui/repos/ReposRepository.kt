@@ -1,6 +1,7 @@
 package com.example.user_github_list.ui.repos
 
 import com.example.user_github_list.data.GithubUserReposData
+import com.example.user_github_list.data.RepoData
 import com.example.user_github_list.remote.RetrofitInterface
 import com.example.user_github_list.utils.Status
 import com.example.user_github_list.utils.ApiResult
@@ -11,7 +12,7 @@ class ReposRepository(private val retrofitInterface: RetrofitInterface) {
         username: String,
         per_page: String,
         page: String
-    ): ApiResult<GithubUserReposData> {
+    ): ApiResult<MutableList<RepoData>> {
         return try {
             val response = retrofitInterface.getUserRepos(username, per_page, page)
             if (response.isSuccessful) {

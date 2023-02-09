@@ -30,7 +30,7 @@ class GithubUserReposPaging(
             var dataList = mutableListOf<RepoData>()
 
             if (data.body() != null) {
-                dataList = data.body()?.repoList ?: mutableListOf()
+                dataList = data.body() ?: mutableListOf()
             }
 
             LoadResult.Page(

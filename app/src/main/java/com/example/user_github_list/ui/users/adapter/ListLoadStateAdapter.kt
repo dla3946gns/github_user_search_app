@@ -8,9 +8,9 @@ import androidx.paging.LoadStateAdapter
 import androidx.recyclerview.widget.RecyclerView
 import com.example.user_github_list.databinding.ItemLoadStateBinding
 
-class GithubUsersLoadStateAdapter(
+class ListLoadStateAdapter(
     private val retry: () -> Unit
-): LoadStateAdapter<GithubUsersLoadStateAdapter.LoadStateViewHolder>() {
+): LoadStateAdapter<ListLoadStateAdapter.LoadStateViewHolder>() {
 
     override fun onCreateViewHolder(
         parent: ViewGroup,

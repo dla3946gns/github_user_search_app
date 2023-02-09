@@ -1,41 +1,114 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout
+<layout
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    xmlns:tools="http://schemas.android.com/tools">
 
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <TextView
-            android:id="@+id/tv_username"
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
             android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:textSize="@dimen/size_18"
-            android:padding="@dimen/size_20"
-            tools:text="dla3946gns님의 Repository입니다."/>
+            android:layout_height="match_parent">
 
-        <View
-            android:id="@+id/view_top_line"
-            android:layout_width="match_parent"
-            android:layout_height="@dimen/size_1"
-            android:background="@color/middle_purple"
-            android:layout_below="@id/tv_username"/>
+            <com.google.android.material.appbar.AppBarLayout
+                android:id="@+id/appBarLayout"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                android:layout_gravity="top"
+                app:elevation="@dimen/size_0">
 
-        <androidx.constraintlayout.widget.ConstraintLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_below="@id/view_top_line">
+                <com.google.android.material.appbar.CollapsingToolbarLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    app:layout_scrollFlags="scroll|enterAlways">
+
+                    <TextView
+                        android:id="@+id/tv_username"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:textSize="@dimen/size_18"
+                        android:padding="@dimen/size_20"
+                        android:background="@color/white"
+                        tools:text="dla3946gns님의 Repository입니다."/>
+
+                    <View
+                        android:id="@+id/view_top_line"
+                        android:layout_width="match_parent"
+                        android:layout_height="@dimen/size_1"
+                        android:background="@color/middle_purple"
+                        android:layout_below="@id/tv_username"/>
+
+                </com.google.android.material.appbar.CollapsingToolbarLayout>
+            </com.google.android.material.appbar.AppBarLayout>
 
             <androidx.recyclerview.widget.RecyclerView
                 android:id="@+id/rv_user_repos"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:orientation="vertical"/>
+                android:orientation="vertical"
+                android:descendantFocusability="beforeDescendants"
+                android:focusable="false"
+                android:focusableInTouchMode="false"
+                android:paddingStart="@dimen/size_10"
+                android:paddingEnd="@dimen/size_10"
+                app:layout_behavior="@string/appbar_scrolling_view_behavior"
+                tools:listitem="@layout/item_github_user_repos"/>
 
-        </androidx.constraintlayout.widget.ConstraintLayout>
+            <ProgressBar
+                android:id="@+id/progressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="?android:progressBarStyle"
+                android:visibility="gone"
+                android:layout_gravity="center"/>
+
+            <LinearLayout
+                android:id="@+id/ll_restart"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:visibility="gone"
+                tools:visibility="visible">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="@string/str_data_load_error"
+                    android:gravity="center"
+                    android:textSize="@dimen/size_15"
+                    android:textColor="@color/black"
+                    android:paddingBottom="@dimen/size_20"
+                    android:layout_marginTop="@dimen/size_100"/>
+
+                <TextView
+                    android:id="@+id/tv_restart"
+                    android:layout_width="@dimen/size_100"
+                    android:layout_height="@dimen/size_50"
+                    android:text="@string/str_re_start"
+                    android:gravity="center"
+                    android:textSize="@dimen/size_15"
+                    android:textColor="@color/black"
+                    android:layout_gravity="center"
+                    android:background="@drawable/bg_round"/>
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/tv_search_result_none"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:text="@string/str_repository_result_none"
+                android:gravity="center"
+                android:textSize="@dimen/size_15"
+                android:textColor="@color/black"
+                android:layout_below="@id/view_header_search"
+                android:visibility="gone"
+                tools:visibility="visible"/>
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
     </RelativeLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+</layout>

@@ -13,8 +13,8 @@ class GithubUsersAdapter: PagingDataAdapter<UserData, GithubUsersAdapter.GithubU
     DIFF_UTIL
 ) {
 
-    var onClick: ((String) -> Unit)? = null
-
+    var onClickUserItem: ((String, String) -> Unit)? = null
+    var onClickUserProfileImage: ((String) -> Unit)? = null
     inner class GithubUsersViewHolder(val viewDataBinding: ItemGithubUsersBinding): ViewHolder(viewDataBinding.root)
 
     companion object {
@@ -29,18 +29,31 @@ class GithubUsersAdapter: PagingDataAdapter<UserData, GithubUsersAdapter.GithubU
         }
     }
 
-    fun onUserClick(listener: (String) -> Unit) {
-        onClick = listener
+    fun onUserClick(listener: (String, String) -> Unit) {
+        onClickUserItem = listener
+    }
+
+    fun onProfileClick(listener: (String) -> Unit) {
+        onClickUserProfileImage = listener
     }
 
     override fun onBindViewHolder(holder: GithubUsersViewHolder, position: Int) {
         val data = getItem(position)
-        holder.viewDataBinding.setVariable(BR.user, data)
-        holder.viewDataBinding.root.setOnClickListener {
-            onClick.let {
-                if (data != null && data.login.isNotEmpty()) {
-                    if (it != null) {
-                        it(data.login)
+        holder.viewDataBinding.apply {
+            setVariable(BR.user, data)
+            if (data != null && data.login.isNotEmpty()) {
+                root.setOnClickListener {
+                    onClickUserItem.let {
+                        if (it != null) {
+                            it(data.login, data.avatar_url)
+                        }
+                    }
+                }
+                ivProfile.setOnClickListener {
+                    onClickUserProfileImage.let {
+                        if (it != null) {
+                            it(data.login)
+                        }
                     }
                 }
             }

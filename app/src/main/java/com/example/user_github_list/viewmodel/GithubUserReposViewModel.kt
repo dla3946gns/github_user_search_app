@@ -7,6 +7,7 @@ import androidx.paging.PagingConfig
 import androidx.paging.cachedIn
 import androidx.paging.liveData
 import com.example.user_github_list.data.GithubUserReposData
+import com.example.user_github_list.data.RepoData
 import com.example.user_github_list.remote.RetrofitInterface
 import com.example.user_github_list.ui.repos.ReposRepository
 import com.example.user_github_list.ui.repos.paging.GithubUserReposPaging
@@ -33,8 +34,8 @@ class GithubUserReposViewModel @Inject constructor(
         }.liveData.cachedIn(viewModelScope)
     }
 
-    private val _githubUserRepos = MutableLiveData<ContentEvents<ApiResult<GithubUserReposData>>>()
-    val githubUserRepos: LiveData<ContentEvents<ApiResult<GithubUserReposData>>> = _githubUserRepos
+    private val _githubUserRepos = MutableLiveData<ContentEvents<ApiResult<MutableList<RepoData>>>>()
+    val githubUserRepos: LiveData<ContentEvents<ApiResult<MutableList<RepoData>>>> = _githubUserRepos
 
     fun setUserName(name: String) {
         username.postValue(name)

@@ -9,5 +9,6 @@ data class RepoData(
     val id: String,
     val name: String,
     val fullName: String,
-    val owner: UserData
+    val owner: UserData,
+    val description: String,
 )

@@ -24,5 +24,9 @@ data class UserData (
     val received_events_url: String,
     val type: String,
     val site_admin: String,
-    val score: String
+    val score: String,
+    val name: String,
+    val public_repos: String,
+    val followers: String,
+    val following: String
 )

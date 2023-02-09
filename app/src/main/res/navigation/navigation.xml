@@ -13,12 +13,31 @@
         tools:layout="@layout/fragment_github_users">
         <action
             android:id="@+id/action_githubUsersFragment_to_githubReposFragment"
-            app:destination="@id/action_githubUsersFragment_to_githubReposFragment"/>
+            app:destination="@id/fragment_github_user_repos" />
+        <action
+            android:id="@+id/action_githubUsersFragment_to_githubUserDetailFragment"
+            app:destination="@id/fragment_github_user_detail"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_github_user_repos"
-        android:name="com.example.user_github_list.ui.repos.GithubUserReposFragment">
-
+        android:name="com.example.user_github_list.ui.repos.GithubReposFragment"
+        android:label="fragment_github_user_repos"
+        tools:layout="@layout/fragment_github_user_repos">
+        <argument
+            android:name="username"
+            app:argType="string" />
+        <argument
+            android:name="profileImage"
+            app:argType="string" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragment_github_user_detail"
+        android:name="com.example.user_github_list.ui.users.GithubUserDetailFragment"
+        android:label="fragment_github_user_detail"
+        tools:layout="@layout/fragment_github_user_detail">
+        <argument
+            android:name="username"
+            app:argType="string"/>
     </fragment>
 
 </navigation>
