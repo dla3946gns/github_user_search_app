@@ -1,8 +1,7 @@
 # github_user_search_app
 스포카 github 유저 검색기 만들기 과제 Repository입니다.
 
-1. 검색어를 작성하여 사용자 리스트를 불러옵니다.
-<br/>
+# 1. 검색어를 작성하여 사용자 리스트를 불러옵니다.
 ![Screenshot_20230209_210428_user_github_list](https://user-images.githubusercontent.com/58911609/217815274-ffdc357c-e00c-41d6-8ce5-a2092faa08ab.jpg)
 ![Screenshot_20230209_210841_user_github_list](https://user-images.githubusercontent.com/58911609/217815285-2d273ec8-73b4-446a-82a5-6030b1c31c96.jpg)
 <br/>
