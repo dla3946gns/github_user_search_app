@@ -13,7 +13,7 @@ object Constants {
     const val HEADER_ACCEPT_KEY = "Accept"
     const val HEADER_ACCEPT_VALUE = "application/vnd.github+json"
     const val HEADER_AUTHORIZATION_KEY = "Authorization"
-    const val HEADER_AUTHORIZATION_VALUE = "token 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"
+    const val HEADER_AUTHORIZATION_VALUE = "token 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"
     const val HEADER_API_VERSION_KEY = "X-GitHub-Api-Version"
     const val HEADER_API_VERSION_VALUE = "2022-11-28"
     // Retrofit Client Header String [End]
