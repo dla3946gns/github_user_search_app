@@ -65,7 +65,7 @@ class GithubUsersFragment: Fragment() {
                 }
             })
 
-            tvSearchResultNone.setOnClickListener {
+            tvRestart.setOnClickListener {
                 actionSearch()
             }
 
@@ -83,7 +83,7 @@ class GithubUsersFragment: Fragment() {
 
             onProfileClick { username ->
                 // 사용자 정보 상세 페이지로 이동
-                val action = GithubUsersFragmentDirections.actionGithubUsersFragmentToGithubUserDetailFragment(username)
+                val action = GithubUsersFragmentDirections.actionGithubUsersFragmentToGithubUserDetailFragment("U", username, "", "")
                 findNavController().navigateSafe(action.actionId, action.arguments)
             }
 

@@ -29,15 +29,33 @@
         <argument
             android:name="profileImage"
             app:argType="string" />
+        <action
+            android:id="@+id/action_githubUserRepoFragment_to_githubUserDetailFragment"
+            app:destination="@id/fragment_github_user_detail"/>
     </fragment>
     <fragment
         android:id="@+id/fragment_github_user_detail"
-        android:name="com.example.user_github_list.ui.users.GithubUserDetailFragment"
+        android:name="com.example.user_github_list.ui.users.GithubDetailFragment"
         android:label="fragment_github_user_detail"
-        tools:layout="@layout/fragment_github_user_detail">
+        tools:layout="@layout/fragment_github_detail">
+        <argument
+            android:name="detailType"
+            app:argType="string" />
         <argument
             android:name="username"
-            app:argType="string"/>
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true"/>
+        <argument
+            android:name="repoName"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true" />
+        <argument
+            android:name="repoDesc"
+            android:defaultValue=""
+            app:argType="string"
+            app:nullable="true"/>
     </fragment>
 
 </navigation>

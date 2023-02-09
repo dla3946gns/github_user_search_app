@@ -8,11 +8,12 @@ import androidx.recyclerview.widget.RecyclerView.ViewHolder
 import com.example.user_github_list.BR
 import com.example.user_github_list.data.RepoData
 import com.example.user_github_list.databinding.ItemGithubUserReposBinding
+import java.util.Objects
 
 class GithubUserReposAdapter: PagingDataAdapter<RepoData, GithubUserReposAdapter.GithubUserRepoViewHolder>(
     DIFF_UTIL) {
 
-    var onClick: ((String) -> Unit)? = null
+    var onClick: ((String?, String?, String?) -> Unit)? = null
 
     inner class GithubUserRepoViewHolder(val viewDataBinding: ItemGithubUserReposBinding): ViewHolder(viewDataBinding.root)
 
@@ -28,7 +29,7 @@ class GithubUserReposAdapter: PagingDataAdapter<RepoData, GithubUserReposAdapter
         }
     }
 
-    fun onRepoClick(listener: (String) -> Unit) {
+    fun onRepoClick(listener: (String?, String?, String?) -> Unit) {
         onClick = listener
     }
 
@@ -37,7 +38,9 @@ class GithubUserReposAdapter: PagingDataAdapter<RepoData, GithubUserReposAdapter
         holder.viewDataBinding.setVariable(BR.repo, data)
         holder.viewDataBinding.root.setOnClickListener {
             onClick.let {
-
+                if (data != null && it != null) {
+                    it(data.owner.login, data.name, data.description)
+                }
             }
         }
     }

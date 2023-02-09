@@ -12,6 +12,8 @@
     <string name="fmt_username">이름 : %s</string>
     <string name="fmt_user_github_name">깃허브 : %s</string>
     <string name="fmt_repo_count">Repository : %s개</string>
+    <string name="fmt_repo">Repository : %s</string>
     <string name="fmt_follower_count">팔로워 수 : %s명</string>
     <string name="fmt_following_count">팔로잉 수 : %s명</string>
+    <string name="fmt_repo_desc">설명 : %s</string>
 </resources>

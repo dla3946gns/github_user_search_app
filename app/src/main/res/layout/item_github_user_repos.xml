@@ -5,6 +5,8 @@
 
     <data>
         <import type="com.example.user_github_list.data.RepoData"/>
+        <import type="android.view.View"/>
+        <import type="android.text.TextUtils"/>
         <variable
             name="repo"
             type="RepoData" />
@@ -31,26 +33,31 @@
                 android:ellipsize="end"
                 android:maxLines="2"
                 android:paddingBottom="@dimen/size_10"
-                android:text="@{repo.name}"
+                android:text='@{repo.name != null ? repo.name : ""}'
+                android:visibility="@{TextUtils.isEmpty(repo.name) ? View.GONE : View.VISIBLE}"
                 tools:text="Hello!" />
 
             <TextView
+                android:id="@+id/tv_repo_full_name"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/size_15"
                 android:paddingBottom="@dimen/size_10"
-                android:text="@{repo.fullName}"
-                tools:text="repository full name"/>
+                android:text='@{repo.fullName != null ? repo.fullName : ""}'
+                android:visibility="@{TextUtils.isEmpty(repo.fullName) ? View.GONE : View.VISIBLE}"
+                tools:text="repository full name" />
 
             <TextView
+                android:id="@+id/tv_desc"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 style="@style/TextAppearance.AppCompat.Body1"
                 android:textSize="@dimen/size_12"
                 android:ellipsize="end"
                 android:maxLines="2"
-                android:text="@{repo.description}"
+                android:text='@{repo.description != null ? repo.description : ""}'
+                android:visibility="@{TextUtils.isEmpty(repo.description) ? View.GONE : View.VISIBLE}"
                 tools:text="repository description"/>
 
         </LinearLayout>
