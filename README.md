@@ -2,7 +2,7 @@
 스포카 github 유저 검색기 만들기 과제 Repository입니다.
 
 ###1. 검색어를 작성하여 사용자 리스트를 불러옵니다.
-![Screenshot_20230209_210428_user_github_list](https://user-images.githubusercontent.com/58911609/217813000-2ac37962-b3d7-48e7-a576-375f42a8df8a.jpg)
+<img width="320" height="500" ![Screenshot_20230209_210428_user_github_list](https://user-images.githubusercontent.com/58911609/217813000-2ac37962-b3d7-48e7-a576-375f42a8df8a.jpg)/>
 ![Screenshot_20230209_210841_user_github_list](https://user-images.githubusercontent.com/58911609/217813023-0cc7bf83-34ec-4311-8020-c579ecd5470b.jpg)
 <br/>
 ###2. 사용자 프로필 이미지를 클릭하면 사용자 상세 페이지로 이동하고, 리스트 중 하나를 누르면 리포지토리 리스트 페이지로 이동합니다.
